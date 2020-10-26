@@ -21,7 +21,7 @@ import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.chat_base import TRChatBase
-from helper_funcs.display_progrezz import progrezz_for_pyrogram
+from helper_funcs.display_progress import progress_for_pyrogram
 from helper_funcs.help_Nekmo_ffmpeg import take_screen_shot
 
 from hachoir.metadata import extractMetadata
@@ -52,7 +52,7 @@ async def convert_to_video(bot, update):
         the_real_download_location = await bot.download_media(
             message=update.reply_to_message,
             file_name=download_location,
-            progress=progrezz_for_pyrogram,
+            progress=progress_for_pyrogram,
             progress_args=(
                 Translation.DOWNLOAD_START,
                 a,
